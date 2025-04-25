@@ -1,0 +1,603 @@
+/* ملف الأنماط الرئيسي */
+
+
+/* الأساسيات */
+:root {
+    --primary-color: #2c5e80;
+    --secondary-color: #d4af37;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --font-arabic: 'Amiri', serif;
+    --font-text: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-arabic);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    direction: rtl;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 span {
+    padding: 0 15px;
+    position: relative;
+}
+
+h2 span:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* الهيدر */
+/* Style pour le header en une ligne avec effets hover */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    margin: 0;
+    color: #2c5e80;
+    transition: inherit;
+}
+
+.logo p {
+    font-family: 'Amiri', serif;
+    font-size: 0.9rem;
+    color: #d4af37;
+    margin: 0;
+    transition: inherit;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo:hover h1 {
+    text-shadow: 0 2px 3px rgba(44, 94, 128, 0.2);
+}
+
+.logo:hover p {
+    color: #c19b2e;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    font-family: 'Amiri', serif;
+    display: block;
+    padding: 10px 20px;
+    color: #2c5e80;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f8f9fa;
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 20px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: calc(100% - 40px);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #2c5e80;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* الهيرو */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Kaaba_Masjid_Haraam_Makkah.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* الأقسام */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.content-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.content-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* الجدول الزمني */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    margin-right: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-year {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* إحصاءات الهجرة */
+.hijra-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* الإرث */
+.legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.legacy-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.legacy-item:hover {
+    transform: translateY(-10px);
+}
+
+.legacy-item i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* معرض الصور */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+/* الفوتر */
+footer {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+}
+
+/* الآيات القرآنية */
+.verse {
+    background: #f5f5f5;
+    padding: 15px;
+    border-right: 4px solid var(--secondary-color);
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* التكيف مع الشاشات الصغيرة */
+@media (max-width: 992px) {
+    .content-box {
+        flex-direction: column;
+    }
+    
+    .timeline:before {
+        right: 31px;
+    }
+    
+    .timeline-item {
+        padding-right: 70px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        flex-direction: column;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: 50px 0;
+    }
+    
+    .hijra-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+
+
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+    header .container {
+        padding: 0 15px;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        transition: right 0.3s ease;
+        gap: 0;
+    }
+    
+    nav ul.show {
+        right: 0;
+    }
+    
+    nav ul li a {
+        padding: 12px 25px;
+        border-radius: 0;
+    }
+    
+    nav ul li a:hover {
+        background-color: #f5f5f5;
+        transform: none;
+    }
+    
+    nav ul li a::before {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Animation pour le menu mobile */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+nav ul.show li {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+nav ul.show li:nth-child(1) { animation-delay: 0.1s; }
+nav ul.show li:nth-child(2) { animation-delay: 0.2s; }
+nav ul.show li:nth-child(3) { animation-delay: 0.3s; }
+nav ul.show li:nth-child(4) { animation-delay: 0.4s; }
+nav ul.show li:nth-child(5) { animation-delay: 0.5s; }
+nav ul.show li:nth-child(6) { animation-delay: 0.6s; }
